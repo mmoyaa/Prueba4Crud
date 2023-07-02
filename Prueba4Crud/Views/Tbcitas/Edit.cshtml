@@ -4,9 +4,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Editar Cita</h1>
 
-<h4>Tbcita</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -18,19 +18,37 @@
                 <input asp-for="Fecha" class="form-control" />
                 <span asp-validation-for="Fecha" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            @*<div class="form-group">
                 <label asp-for="Hora" class="control-label"></label>
                 <input asp-for="Hora" class="form-control" />
                 <span asp-validation-for="Hora" class="text-danger"></span>
-            </div>
+            </div>*@
             <div class="form-group">
-                <label asp-for="Previsión" class="control-label"></label>
-                <input asp-for="Previsión" class="form-control" />
+                <label asp-for="Previsión" class="control-label">Prevision</label>
+
+                <select id="Previsión" name="Previsión" class="form-control">
+                    <option value=Fonasa>Fonasa</option>
+                    <option value=Isapre>Isapre</option>
+                </select>
+
+                @*<input asp-for="ModoCita" class="form-control" />*@
+
+
+                <br />
                 <span asp-validation-for="Previsión" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="ModoCita" class="control-label"></label>
-                <input asp-for="ModoCita" class="form-control" />
+                <label asp-for="ModoCita" class="control-label">Modo Cita</label>
+
+                <select id="ModoCita" name="ModoCita" class="form-control">
+                    <option value=On-Line>On-Line</option>
+                    <option value=Presencial>Presencial</option>
+                </select>
+
+                @*<input asp-for="ModoCita" class="form-control" />*@
+
+
+                <br />
                 <span asp-validation-for="ModoCita" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -44,14 +62,14 @@
                 <span asp-validation-for="IdPaciente" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+                <input type="submit" value="Guardar" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">Volver</a>
 </div>
 
 @section Scripts {

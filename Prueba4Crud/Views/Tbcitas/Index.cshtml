@@ -4,10 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Crear Nueva Cita</a>
 </p>
 <table class="table">
     <thead>
@@ -15,9 +15,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Fecha)
             </th>
-            <th>
+          @*  <th>
                 @Html.DisplayNameFor(model => model.Hora)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.Previsión)
             </th>
@@ -39,9 +39,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Fecha)
             </td>
-            <td>
+           @* <td>
                 @Html.DisplayFor(modelItem => item.Hora)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.Previsión)
             </td>
@@ -53,11 +53,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IdPacienteNavigation.IdPaciente)
+
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdCita">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdCita">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdCita">Delete</a>
+                    <a asp-action="Edit" class="btn btn-warning"  asp-route-id="@item.IdCita">Editar</a> |
+                    <a asp-action="Details" class="btn btn-primary" asp-route-id="@item.IdCita">Detalles</a> |
+                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.IdCita">Borrar</a>
             </td>
         </tr>
 }
