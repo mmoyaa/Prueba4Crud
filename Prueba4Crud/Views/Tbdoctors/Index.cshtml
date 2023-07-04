@@ -7,12 +7,15 @@
 <h1>Tabla Doctores</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Agregar</a>
+    <a asp-action="Create" class="btn btn-success">Agregar</a>
     @*<a asp-action="Create">Agregar Doctor</a>*@
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdDoctor)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Nombre)
             </th>
@@ -40,6 +43,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdDoctor)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Nombre)
             </td>

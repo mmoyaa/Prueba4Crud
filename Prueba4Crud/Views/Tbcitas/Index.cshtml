@@ -7,11 +7,16 @@
 
 
 <p>
-    <a asp-action="Create">Crear Nueva Cita</a>
+    @*<a asp-action="Create">Crear Nueva Cita</a>*@
+    <a asp-action="Create" class="btn btn-success">Agregar</a>
 </p>
 <table class="table">
     <thead>
         <tr>
+            <th>
+
+                @Html.DisplayNameFor(model => model.IdCita)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Fecha)
             </th>
@@ -24,11 +29,14 @@
             <th>
                 @Html.DisplayNameFor(model => model.ModoCita)
             </th>
+            <th >
+
+          
+             @*  @Html.DisplayNameFor(model => model.IdDoctorNavigation) *@
+                <p>Doctor </p>
             <th>
-                @Html.DisplayNameFor(model => model.IdDoctorNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdPacienteNavigation)
+                <p>Paciente </p>
+                @*@Html.DisplayNameFor(model => model.IdPacienteNavigation)*@
             </th>
             <th></th>
         </tr>
@@ -36,6 +44,9 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdCita)
+                </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Fecha)
             </td>
